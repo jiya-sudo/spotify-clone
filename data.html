@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="stylesheet/media.css">
+    <title>Spotify- Web Player: Music for Everyone</title>
+    <style>
+        .Spotify-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    height:64px;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: white;
+}
+.logo{
+    height: 35px;
+    border-radius: 35px;
+    margin-right: 16px;
+}
+.nav-left{
+    display: flex;
+    align-items: center;
+}
+body{
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: white;
+}
+.nav-ryt{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+}
+.searching {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.search-bar{
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: #242424;
+    color: white;
+    width: 100%;
+    max-width: 250px;
+}
+.explore-btn{
+    background-color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+    font-weight: 600;
+}
+.hh{
+    background-color:#242424;
+    padding: 11px;
+    border-radius: 35px;
+}
+.install-text{
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+.install-text:hover{
+    font-weight: bold;
+}
+.nav-icon2:hover{
+    font-weight: bolder;
+}
+.nav-icon3{
+    background-color: #242424;
+    padding: 11px;
+    border-radius: 50%;
+}
+.explore-btn:hover{
+    font-weight:bold;
+    background-color:#242424;
+}
+.searching {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    color: #b3b3b3;
+    pointer-events: none;
+}
+
+.search-bar {
+    padding: 8px 15px 8px 40px; /* Padding left to make space for icon */
+    border-radius: 20px;
+    border: none;
+    background-color: #242424;
+    color: white;
+    width: 250px;
+    max-width: 100%;
+}
+.main-container{
+    width:100%;
+    height:calc(100vh);
+    display:flex;
+    background-color:#121212;
+    color:white;
+    border-radius: 10px;
+    margin: 3px;
+}
+.sidebar{
+    width:30%;
+    padding:20px;
+    background-color:#1e1e1e;
+    overflow-y:auto;
+    max-height:100%;
+    box-sizing:border-box;
+    border-radius: 10px;
+    margin: 5px;
+    /* position: fixed; */
+}
+.library-header{
+    margin-bottom:20px;
+}
+.library-cards{
+    overflow-y:auto;
+    max-height:300px;
+    padding:10px;
+    box-shadow:0px 4px 10px fgba(0,0,0,0.5);
+}
+.playlist-card, .podcast-card {
+    background-color: #242424;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.playlist-card h6,
+.podcast-card h6 {
+    margin: 0 0 10px 0;
+}
+
+.playlist-card p,
+.podcast-card p {
+    font-size: 14px;
+    color: #b3b3b3;
+}
+.btn {
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+/* Content Area (70%) */
+.content-area {
+    width: 70%;
+    padding: 20px;
+    background-color: #181818;
+    overflow-y: auto;
+}
+.icon22{
+    cursor:pointer;
+}
+.icon22:hover{
+    background-color:rgb(36, 43, 43);
+    padding:5px;
+    border-radius:50%;
+}
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    background-color:#242424;
+    padding:10px;
+    border-radius:8px;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.5);
+}
+.sidebar-links a{
+    display:block;
+    padding:8px;
+    color:white;
+    text-decoration:none;
+}
+.sidebar-links a:hover {
+    font-weight: bold;
+    background-color: #242424;
+    border-radius: 5px;
+}
+
+#languageSelect {
+    margin-left: 10px;
+    background-color: #242424;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btn2{
+    background-color: #454545;
+    color: white;
+    border: 2px solid #454545;
+    border-radius: 40px;
+    margin:12px 6px;
+    padding:5px 7px ;
+    
+}
+
+.newbar{
+    background-color: #1e1e1e;
+    border-radius: 10px; 
+    margin: 5px;
+    height: 100%;
+    width: 1024px;
+    padding-left: 30px;
+}
+.btn2:hover{
+    background-color: black;
+    color: wheat;
+}
+.btn2{
+    background-color: #242424;
+    
+}
+.newnav{
+    display: inline;
+    position: fixed;
+    background-color: #1e1e1e;
+    width: 1056px;
+    margin: 0%;
+}
+#textc{
+    color: white;
+    font-weight: bolder;
+    
+}
+</style>
+</head>
+<body class="overflow-x-hidden">
+   
+    <nav class="Spotify-navbar">
+        <div class="nav-left">
+            <img class="logo" src="images/sp-logo.png" alt="logo">
+        </div>
+        <div class="nav-ryt">
+            <i class="fa-solid fa-house hh nav-icon" title="home"></i>
+            <div class="searching">
+                <i class="fa fa-search search-icon"></i>
+                <input class="search-bar" type="text" placeholder="What do you want to play?">
+            </div>
+            <button class="explore-btn">Explore Now!</button>
+            <span class="install-text"><i class="fa-regular fa-circle-down"></i> Install app</span>
+            <i class="fa-regular fa-bell nav-icon nav-icon2"  title="notification"></i>
+            <i class="fa-solid fa-user nav-icon nav-icon3" title="user-login"></i>
+        </div>
+    </nav>
+
+    <div class="main-container ">
+        <div class="sidebar">
+            <div class="library-header d-flex justify-content-between align-items-center">
+                <h5>Your Library</h5>
+                <i class="fa-solid fa-plus icon22"></i>
+            </div>
+        
+            <div class="library-cards">
+            <div class="playlist-card">
+                <h6>Create your first playlist</h6>
+                <p>it's easy, we'll help you</p>
+                <button class="btn btn-light">Create Playlist</button>
+            </div>
+            <div class="podcast-card">
+                <h6>let's find some podcasts to follow</h6>
+                <p>we'll keep you updated on new episodes</p>
+                <button class="btn btn-light">Browse Podcasts</button>
+            </div>
+        </div>
+        <!-- sidebar extra options -->
+        <div class="sidebar-links">
+            <a href="#">Legal</a>
+            <a href="#">Safety & Privacy</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookies</a>
+            <a href="#">About Ads</a>
+            <a href="#">Language 
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                </select>
+            </a>
+        </div>
+        
+    </div>
+    <div class="content-container">
+        <div class="newbar">
+            <div class="newnav">
+                <button class="btn2 btns btn-light" onclick="all()">All</button>
+                <button class="btn2 btns" onclick="all()">Music</button>
+                <button class="btn2 btns" onclick="all()">Podcasts</button>
+            </div>
+            <div class="songlist"><br><br>
+            <h1>Best of NCS - No Copyright Sounds</h1>
+            <div class="songItemContainer">
+            <div class="songItem">
+                <img src="logo.png" alt="1">
+                <span>salaam-e ishq</span>
+                <span class="songlistPlay"><span class="timeStamp">05:34 <i class="fa-solid fa-circle-play"></i></span></span>
+            </div>
+            <div class="songItem">
+                <img src="logo.png" alt="1">
+                <span>salaam-e ishq</span>
+                <span class="songlistPlay"><span class="timeStamp">05:34 <i class="fa-solid fa-circle-play"></i></span></span>
+            </div>
+            <div class="songItem">
+                <img src="logo.png" alt="1">
+                <span>salaam-e ishq</span>
+                <span class="songlistPlay"><span class="timeStamp">05:34 <i class="fa-solid fa-circle-play"></i></span></span>
+            </div>
+            <div class="songItem">
+                <img src="logo.png" alt="1">
+                <span>salaam-e ishq</span>
+                <span class="songlistPlay"><span class="timeStamp">05:34 <i class="fa-solid fa-circle-play"></i></span></span>
+            </div>
+            <div class="songItem">
+                <img src="logo.png" alt="1">
+                <span>salaam-e ishq</span>
+                <span class="songlistPlay"><span class="timeStamp">05:34 <i class="fa-solid fa-circle-play"></i></span></span>
+            </div>
+            <div class="songItem">
+                <img src="logo.png" alt="1">
+                <span>salaam-e ishq</span>
+                <span class="songlistPlay"><span class="timeStamp">05:34 <i class="fa-solid fa-circle-play"></i></span></span>
+            </div>
+        </div>
+        </div>
+        <div class="songbanner"></div>
+    </div>
+
+    <div class="bottom">
+        <input  type="range" name="range" id="myprogressbar" min="0" max="100">
+        <div class="icon">
+            <!-- fontawesome icons -->   
+            <i class="fa-solid fa-2x fa-backward-step"> </i>
+            <i class="fa-solid fa-2x fa-circle-play"></i>
+            <i class="fa-solid fa-2x fa-forward-step"></i>
+        </div>
+        <div class="songInfo">
+            <img src="playing.gif" width="45px" alt="2" >Salam-e-Ishq
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+
+</html>

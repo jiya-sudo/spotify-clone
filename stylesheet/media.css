@@ -1,0 +1,73 @@
+@media (max-width:768px){
+    .Spotify-navbar{
+        /* flex-direction:column; */
+        align-items:flex-start;
+        padding:10px 16px;
+        height:auto;
+    }
+    .nav-ryt{
+        /* flex-direction:column; */
+        align-items:stretch;
+        gap:10px;
+        /* width:100%; */
+        margin-top:10px;
+    }
+    .search-bar{
+        /* width:100%; */
+    }
+    .explore-btn{
+        /* width:100%; */
+    }
+    .install-text{
+        display:block;
+        /* width:100%; */
+        text-align:left;
+    }
+    .search-bar {
+        display: none;
+    }
+    
+    .searching {
+        justify-content: center;
+        padding: 8px;
+        background-color: #242424;
+        border-radius: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .search-icon {
+        position: static;
+        font-size: 16px;
+        color: white;
+    } 
+    .main-container {
+        /* flex-direction: column; */
+    }
+    
+    .sidebar,
+    .content-area {
+        /* width: 100%; */
+    }
+
+    
+    .search-bar {
+        display: none; /* hides input on mobile */
+    }
+      
+    .searching {
+        background-color: #242424;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+      
+   .search-icon {
+       position: statc;
+       color: white;
+   }
+      
+  
+}
